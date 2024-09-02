@@ -82,7 +82,7 @@ public class BlogService {
         {
             throw new ApiException("Blog not found");
         }
-        if(auth_id != blogRepository.findBlogByTitle(title).getFirst().getId())
+        if(auth_id != blogRepository.findBlogByTitle(title).get(0).getUser().getId())
         {
             throw new ApiException("Not match");
         }
